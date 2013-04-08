@@ -1,0 +1,124 @@
+/* =====================
+ * Typography
+ * ====================*/
+
+// = Variables
+$body-text-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
+$header-text-family: Georgia, serif
+// Sub headings use the Tradegothic webfont with body text fallback
+$sub-header-text-family: join("Tradegothic-BC", $body-text-family, comma)
+$mono-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace
+$base-block-elements: "h5, p, ul, ol, dl"
+
+/* = Set up web fonts = */
+/* Icon font */
+@font-face
+	font-family: "FontAwesome"
+	src: url(fonts/fontawesome-webfont.eot?v=3.0.2)
+	src: url(fonts/fontawesome-webfont.eot?#iefix&v=3.0.2) format("embedded-opentype"), url(fonts/fontawesome-webfont.woff?v=3.0.2) format("woff"), url(fonts/fontawesome-webfont.ttf?v=3.0.2) format("truetype")
+	font-weight: normal
+	font-style: normal
+
+/* Establish vertical rhythm baseline */
++establish-baseline
+
+body
+	color: $text-color
+	font-family: $body-text-family
+
+h1,
+h2,
+h3,
+h4,
+h5
+	font-weight: bold
+
+h1
+	font-family: $header-text-family
+	+adjust-font-size-to(32px)
+	+rhythm(0, 0, 0, 1, 32px)
+	text-transform: uppercase
+
+h2,
+h3,
+h4,
+h5
+	font-family: $sub-header-text-family
+
+h2
+	+adjust-font-size-to(24px)
+	+rhythm(1, 0, 0, 1, 24px)
+
+h3
+	+adjust-font-size-to(20px)
+	+rhythm(1, 0, 0, 1, 20px)
+
+h4
+	+adjust-font-size-to(16px)
+	+rhythm(1, 0, 0, 1, 16px)
+	
+	+rhythm(1, 0, 0, 1)
+
+h6
+	+adjust-font-size-to(11px)
+	+rhythm(1, 0, 0, 1, 11px)
+	text-transform: uppercase
+	font-weight: normal
+	letter-spacing: 1px
+
+#{$base-block-elements}
+	+adjust-font-size-to($base-font-size)
+	+rhythm(1, 0, 0, 1)
+	
+// With nested adjustments:
+#{nest($base-block-elements, $base-block-elements)}
+	+rhythm(0.5, 0, 0, 0.5)
+		
+li,
+dt,
+dd,
+th,
+td
+	+rhythm(0)
+
+p:first-child
+	margin-top: 0
+
+code,
+pre,
+abbr
+	font-family: $mono-family
+
+// List formatting should only be applied to regular content
+.entry-content,
+.comment-content
+	ol
+		list-style: decimal
+
+		ol
+			list-style: lower-alpha
+
+	ul
+		+list-bullets("list-bullet.png", 2em)
+
+	ol,
+	dd
+		padding-left: 2em
+
+	#{nest("ol, dd", "ol, dd")}
+		padding-left: 1.5em
+
+dt,
+strong
+	font-weight: bold
+
+em
+	font-style: italic
+
+a,
+a:link
+	color: $accent-color
+	text-decoration: none
+
+a:hover
+	text-decoration: underline
