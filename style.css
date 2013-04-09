@@ -373,3 +373,208 @@ body > footer {
 .entry-content {
   margin-bottom: 1em;
 }
+
+/* =========================
+ * Navigation
+ * ======================== */
+/* = General = */
+/* line 6, sass/_navigation.sass */
+.menu-item {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background: none;
+  padding: 0;
+}
+/* line 11, sass/_navigation.sass */
+.menu-item a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 14, sass/_navigation.sass */
+.menu-item:after {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  content: "|";
+  width: 0;
+  overflow: hidden;
+  border-right: 1px solid #b3b3b3;
+  margin: 0 0.6em 0 1em;
+}
+/* line 22, sass/_navigation.sass */
+.menu-item:last-child:after {
+  content: "";
+  border-right: none;
+  margin: 0;
+}
+
+/* line 27, sass/_navigation.sass */
+ul.menu {
+  margin: 0;
+  padding: 0;
+}
+/* line 31, sass/_navigation.sass */
+ul.menu .social {
+  width: 1.5em;
+  margin: 0 0.5em;
+  overflow: hidden;
+}
+/* line 36, sass/_navigation.sass */
+ul.menu .social:after {
+  display: none;
+}
+/* line 39, sass/_navigation.sass */
+ul.menu .social.facebook {
+  width: 1em;
+}
+/* line 42, sass/_navigation.sass */
+ul.menu .social.linkedin {
+  border-right: 1px solid #b3b3b3;
+  padding-right: 1em;
+}
+/* line 46, sass/_navigation.sass */
+ul.menu .social a {
+  color: #6e6e6e;
+  padding: 0 6px;
+}
+/* line 50, sass/_navigation.sass */
+ul.menu .social a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+/* line 54, sass/_navigation.sass */
+ul.menu .social a:before {
+  padding-right: 1.5em;
+}
+/* line 57, sass/_navigation.sass */
+ul.menu .social.facebook a {
+  font-family: FontAwesome;
+}
+/* line 117, sass/style.sass */
+ul.menu .social.facebook a:before {
+  text-decoration: inherit;
+  content: "\f09a";
+  speak: none;
+}
+/* line 60, sass/_navigation.sass */
+ul.menu .social.twitter a {
+  font-family: FontAwesome;
+}
+/* line 117, sass/style.sass */
+ul.menu .social.twitter a:before {
+  text-decoration: inherit;
+  content: "\f099";
+  speak: none;
+}
+/* line 63, sass/_navigation.sass */
+ul.menu .social.linkedin a {
+  font-family: FontAwesome;
+}
+/* line 117, sass/style.sass */
+ul.menu .social.linkedin a:before {
+  text-decoration: inherit;
+  content: "\f0e1";
+  speak: none;
+}
+
+/* line 66, sass/_navigation.sass */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding: 4px;
+  color: #ec2c2e;
+  cursor: pointer;
+  font-family: FontAwesome;
+}
+/* line 117, sass/style.sass */
+.menu-toggle:before {
+  text-decoration: inherit;
+  content: "\f0c9";
+  speak: none;
+}
+/* line 74, sass/_navigation.sass */
+.menu-toggle:hover {
+  color: #a30f10;
+}
+/* line 77, sass/_navigation.sass */
+.menu-toggle:active {
+  color: #460607;
+}
+
+/* = Main menu = */
+@media screen and (max-width: 675px) {
+  /* line 81, sass/_navigation.sass */
+  .menu-main-menu-container {
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }
+}
+@media screen and (max-width: 525px) {
+  /* line 89, sass/_navigation.sass */
+  .menu-main-menu-container .menu-item {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 0.4em 0;
+  }
+  /* line 95, sass/_navigation.sass */
+  .menu-main-menu-container .menu-item:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 525px) {
+  /* line 98, sass/_navigation.sass */
+  .menu-main-menu-container > div {
+    background: #e5e5e5;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition-property: max-height;
+    -moz-transition-property: max-height;
+    -o-transition-property: max-height;
+    transition-property: max-height;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  /* line 106, sass/_navigation.sass */
+  .menu-main-menu-container > div.expanded {
+    max-height: 300px;
+  }
+  /* line 109, sass/_navigation.sass */
+  .menu-main-menu-container > div .menu {
+    border-top: 2px solid #919191;
+    border-bottom: 2px solid #919191;
+    padding: 0.5em 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  /* line 114, sass/_navigation.sass */
+  .menu-main-menu-container .menu-toggle {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    position: absolute;
+    top: -58px;
+    right: 0;
+    font-size: 3em;
+    line-height: 1.25em;
+  }
+}
