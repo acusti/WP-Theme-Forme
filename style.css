@@ -251,7 +251,7 @@ abbr {
 .comment-content ol ol {
   list-style: lower-alpha;
 }
-/* line 141, sass/style.sass */
+/* line 137, sass/style.sass */
 .entry-content ul li,
 .comment-content ul li {
   padding-left: 24px;
