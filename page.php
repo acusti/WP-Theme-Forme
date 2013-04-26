@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<article id="content">
+<div id="content">
 	<?php the_post(); ?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<div class="entry-content">
 			<?php 
@@ -13,8 +13,8 @@
 			<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'forme' ) . '&after=</div>') ?>
 			<?php edit_post_link( __( 'Edit', 'forme' ), '<div class="edit-link">', '</div>' ) ?>
 		</div>
-	</div>
+	</article>
 	<?php comments_template( '', true ); ?>
-</article>
+</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

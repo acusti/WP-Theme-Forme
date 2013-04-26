@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="content">
+<section id="content">
 	<?php the_post(); ?>
 	<?php if ( is_day() ) : ?>
 		<h1 class="page-title"><?php printf( __( 'Daily Archives: %s', 'forme' ), '<span>' . get_the_time(get_option('date_format')) . '</span>' ) ?></h1>
@@ -16,6 +16,6 @@
 		<?php get_template_part( 'entry' ); ?>
 	<?php endwhile; ?>
 	<?php get_template_part( 'nav', 'below' ); ?>
-</div>
+</section>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

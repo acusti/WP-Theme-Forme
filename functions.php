@@ -40,15 +40,10 @@ function forme_setup() {
 			true
 		);
 	
-		// HTML5 JS for adding HTML5 support to IE < 9
-		wp_register_script(
-			'html5',
-			'//html5shim.googlecode.com/svn/trunk/html5.js',
-			false,
-			'3.6.2'
-		);
-		$GLOBALS['wp_styles']->add_data( 'html5', 'conditional', 'lt IE 9' );
-		wp_enqueue_script( 'html5' );
+		// HTML5 JS for adding HTML5 support to IE < 9 (has to be added to wp_head action because conditional comments are not supported with WP_Scripts class)
+		add_action( 'wp_head', function() {
+			echo '<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->' . "\n";
+		} );
 	}
 }
 add_action('after_setup_theme', 'forme_setup');
@@ -116,7 +111,7 @@ function forme_widgets_init() {
 		'name' => __('Sidebar Widget Area', 'forme'),
 		'id' => 'primary-widget-area',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</li>",
+		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );

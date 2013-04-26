@@ -85,13 +85,14 @@ p:first-child
 	margin-top: 0
 
 code,
-pre,
-abbr
+pre
 	font-family: $mono-family
 
-// List formatting should only be applied to regular content
+// Semantic block content formatting should only be applied to regular content
 .entry-content,
-.comment-content
+.comment-content,
+.text-widget,
+.textwidget
 	ol
 		list-style: decimal
 
@@ -107,6 +108,19 @@ abbr
 
 	#{nest("ol, dd", "ol, dd")}
 		padding-left: 1.5em
+	
+	li
+		+adjust-leading-to(0.9)
+		+rhythm(0.55, 0, 0, 0.55)
+
+	blockquote
+		+rhythm(1, 1, 1, 1)
+		padding-left: 2em
+		padding-right: 2em
+		background-color: darken(white, 5%)
+
+		> :last-child
+			margin-bottom: 0
 
 dt,
 strong

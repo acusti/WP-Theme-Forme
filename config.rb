@@ -7,12 +7,12 @@ sass_dir = "sass"
 images_dir = "img"
 javascripts_dir = "js"
 
-# Compress the CSS (if you want line number comments and normally formatted CSS, comment out this line)
-output_style = :compressed
-
 # Development or production?
 environment = :development
 # environment = :production
+
+# Compress the CSS when in production
+output_style = environment == :production ? :compressed : :nested
 
 relative_assets = true
 

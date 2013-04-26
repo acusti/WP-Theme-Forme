@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="content">
+<section id="content">
 	<?php if ( have_posts() ) : ?>
 		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'forme' ), '<span>' . get_search_query()  . '</span>' ); ?></h1>
 		<?php get_template_part( 'nav', 'above' ); ?>
@@ -8,14 +8,14 @@
 		<?php endwhile; ?>
 		<?php get_template_part( 'nav', 'below' ); ?>
 	<?php else : ?>
-		<div id="post-0" class="post no-results not-found">
-			<h2 class="entry-title"><?php _e( 'Nothing Found', 'forme' ) ?></h2>
+		<article id="post-0" class="post no-results not-found">
+			<h1 class="entry-title"><?php _e( 'Nothing Found', 'forme' ) ?></h1>
 			<div class="entry-content">
 				<p><?php _e( 'Sorry, nothing matched your search. Please try again.', 'forme' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
-		</div>
+		</article>
 	<?php endif; ?>
-</div>
+</section>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
