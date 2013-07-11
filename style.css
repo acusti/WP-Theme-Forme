@@ -2,8 +2,8 @@
  * Description: Starter theme for WordPress custom theme development based on TidyThemes' BlankSlate starter theme.
  * Author: Pure Cobalt
  * Author URI: http://www.purecobalt.com/
- * Version: 0.5
- * Tags: custom-menu, light, responsive, featured-images, microformats, sticky-post, threaded-comments, translation-ready, SASS, retina, vertical-rhythm
+ * Version: 0.55
+ * Tags: custom-menu, light, responsive, featured-images, microformats, sticky-post, threaded-comments, translation-ready, SASS, retina, vertical-rhythm, pagination, WP-PageNavi
  * License: GNU General Public License
  * License URI: https://www.gnu.org/licenses/gpl.html
  */
@@ -307,6 +307,18 @@ a:link {
 /* line 137, sass/_typography.sass */
 a:hover {
   text-decoration: underline; }
+
+/* line 140, sass/_typography.sass */
+sup,
+sub {
+  position: relative;
+  bottom: 0.55em;
+  font-size: 0.75em; }
+
+/* line 146, sass/_typography.sass */
+sub {
+  bottom: auto;
+  top: 0.25em; }
 
 /* =====================
  * Structure
