@@ -145,6 +145,7 @@ function forme_catz( $glue ) {
 	}
 	if ( empty( $cats ) )
 		return false;
+	
 	return trim( join( $glue, $cats ) );
 }
 
@@ -160,12 +161,13 @@ function forme_tag_it( $glue ) {
 	}
 	if ( empty( $tags ) )
 		return false;
-	return trim(join( $glue, $tags ));
+
+	return trim( join( $glue, $tags ) );
 }
 
 function forme_commenter_link() {
 	$commenter = get_comment_author_link();
-	if ( ereg( '<a[^>]* class=[^>]+>', $commenter ) ) {
+	if ( preg_match( '/<a[^>]* class=[^>]+>/', $commenter ) ) {
 		$commenter = preg_replace( '/(<a[^>]* class=[\'"]?)/', '\\1url ' , $commenter );
 	} else {
 		$commenter = preg_replace( '/(<a )/', '\\1class="url "' , $commenter );
@@ -187,21 +189,21 @@ function forme_custom_comments($comment, $args, $depth) {
 		</div>
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 		<span class="unapproved">
-			<?php _e('Your comment is awaiting moderation.', 'forme') ?>
+			<?php _e( 'Your comment is awaiting moderation.', 'forme' ) ?>
 		</span>
 		<?php endif; ?>
 		<div class="comment-content">
 			<?php comment_text() ?>
 		</div>
 		<?php
-		if($args['type'] == 'all' || get_comment_type() == 'comment') :
-			comment_reply_link(array_merge($args, array(
-				'reply_text' => __('Reply','forme'),
-				'login_text' => __('Login to reply.', 'forme'),
+		if ( $args['type'] == 'all' || get_comment_type() == 'comment' ) :
+			comment_reply_link( array_merge( $args, array(
+				'reply_text' => __( 'Reply','forme' ),
+				'login_text' => __( 'Login to reply.', 'forme' ),
 				'depth' => $depth,
 				'before' => '<div class="comment-reply-link">',
 				'after' => '</div>'
-			)));
+			) ) );
 		endif;
 		?>
 <?php
@@ -212,13 +214,18 @@ function forme_custom_pings($comment, $args, $depth) {
 	?>
 	<li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
 		<div class="comment-author">
-		<?php printf(__('By %1$s on %2$s at %3$s', 'forme'),
+		<?php
+		printf( __( 'By %1$s on %2$s at %3$s', 'forme' ),
 			get_comment_author_link(),
 			get_comment_date(),
-			get_comment_time() );
-			edit_comment_link(__('Edit', 'forme'), ' <span class="meta-sep"> | </span> <span class="edit-link">', '</span>'); ?>
+			get_comment_time()
+		);
+		edit_comment_link( __( 'Edit', 'forme' ), ' <span class="meta-sep"> | </span> <span class="edit-link">', '</span>' );
+		?>
 		</div>
-		<?php if ($comment->comment_approved == '0') { echo '\t\t\t\t\t<span class="unapproved">'; _e('Your trackback is awaiting moderation.', 'forme'); echo '</span>\n'; } ?>
+		<?php if ( $comment->comment_approved == '0' ) : ?>
+			<span class="unapproved"><?php _e( 'Your trackback is awaiting moderation.', 'forme' ) ?></span>
+		<?php endif; ?>
 		<div class="comment-content">
 			<?php comment_text() ?>
 		</div>
