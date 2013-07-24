@@ -48,6 +48,14 @@
 	
 	@return $base-font-size * $number
 
+// Convert a list to a string with items separated by $glue
+@function unite($list, $glue: ", ")
+	$string: ""
+	@each $item in $list
+		@if $string != ""
+			$string: $string + $glue
+		$string: $string + $item
+	@return $string
 
 
 // ======================
