@@ -215,7 +215,7 @@ pre {
   .text-widget ol ol,
   .textwidget ol ol {
     list-style: lower-alpha; }
-/* line 144, sass/style.sass */
+/* line 159, sass/style.sass */
 .entry-content ul li,
 .comment-content ul li,
 .text-widget ul li,
@@ -446,7 +446,7 @@ ul.menu {
     /* line 53, sass/_navigation.sass */
     ul.menu .social.facebook a {
       font-family: FontAwesome; }
-      /* line 124, sass/style.sass */
+      /* line 139, sass/style.sass */
       ul.menu .social.facebook a:before {
         text-decoration: inherit;
         content: "\f02a";
@@ -454,7 +454,7 @@ ul.menu {
     /* line 56, sass/_navigation.sass */
     ul.menu .social.twitter a {
       font-family: FontAwesome; }
-      /* line 124, sass/style.sass */
+      /* line 139, sass/style.sass */
       ul.menu .social.twitter a:before {
         text-decoration: inherit;
         content: "\f029";
@@ -462,7 +462,7 @@ ul.menu {
     /* line 59, sass/_navigation.sass */
     ul.menu .social.linkedin a {
       font-family: FontAwesome; }
-      /* line 124, sass/style.sass */
+      /* line 139, sass/style.sass */
       ul.menu .social.linkedin a:before {
         text-decoration: inherit;
         content: "\f033";
@@ -477,7 +477,7 @@ ul.menu {
   color: #ec2c2e;
   cursor: pointer;
   font-family: FontAwesome; }
-  /* line 124, sass/style.sass */
+  /* line 139, sass/style.sass */
   .menu-toggle:before {
     text-decoration: inherit;
     content: "\f02d";
