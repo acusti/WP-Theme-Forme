@@ -1,0 +1,100 @@
+/* =====================
+ * Variables
+ * ====================*/
+
+// = Defaults
+// Vertical rhythm
+$base-font-size: 12px
+$base-line-height: 18px
+// At the cost of causing some disruptions to vertical rhythm, make sure line-heights do not vary too wildly
+$round-to-nearest-half-line: true
+// General defaults
+$default-text-shadow-color: black
+$default-text-shadow-h-offset: 0px
+$default-text-shadow-v-offset: 1px
+$inline-block-alignment: top
+$legacy-support-for-ie7: true
+// Susy variables
+$total-width: 1000px
+$total-columns: 6
+$column-width-abs: 150px
+$column-width: $column-width-abs / $total-width * 100%
+$gutter-width-abs: 20px
+$gutter-width: $gutter-width-abs / $total-width * 100%
+$grid-padding: 0
+
+// = Imports
+// Import core compass framework http://compass-style.org/reference/compass/
+@import "compass"
+// Import and apply global reset
+@import "compass/reset"
+// Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
+@import "compass/typography/vertical_rhythm"
+
+// = Custom variables (imports are first so custom variables can use them)
+$accent-color: rgb(236, 44, 46)
+$bckg-color: rgb(229, 229, 229)
+$grey: rgb(179, 179, 179)
+$text-color: rgb(51, 51, 51)
+$header-height: 84px
+
+
+/* =====================
+ * Functions
+ * ====================*/
+
+// Strip the unit (px, em, etc) from a value
+@function strip-units($number)
+	@return $number / ($number * 0 + 1)
+
+// Convert a value (em, rem, %, px) to pixels based on $base-font-size
+@function to-pixels($number)
+	$unit: unit($number)
+	@if $unit == "px"
+		@return $number
+
+	$number: strip-units($number)
+	@if $unit == "%"
+		$number: ($number / 100)
+	
+	@return $base-font-size * $number
+
+
+/* =====================
+ * Mixins
+ * ====================*/
+
+// Based on the compass/typography/lists/bullets pretty-bullets mixin
+// Modified to accept padding as 2nd argument in em, %, or px, and to assume other values based on $base-font-size and $base-line-height
+@mixin list-bullets($bullet-icon, $padding: 1em, $line-height: $base-line-height)
+	$width: image-width($bullet-icon)
+	$height: image-height($bullet-icon)
+	// We need $padding in pixels (if it is already in pixels, to-pixels will return it)
+	$padding: to-pixels($padding) 
+
+	li
+		padding-left: $padding
+		background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2
+		list-style-type: none
+
+@mixin dark-text($text-color: black, $text-shadow-color: transparent)
+	color: $text-color
+	-webkit-font-smoothing: subpixel-antialiased
+	@if $text-shadow-color != false
+		+text-shadow($default-text-shadow-h-offset $default-text-shadow-v-offset $default-text-shadow-blur $text-shadow-color)
+
+@mixin light-text($text-color: white, $text-shadow-color: $default-text-shadow-color, $text-shadow-h-offset: $default-text-shadow-h-offset, $text-shadow-v-offset: $default-text-shadow-v-offset, $text-shadow-blur: $default-text-shadow-blur)
+	color: $text-color
+	-webkit-font-smoothing: antialiased
+	@if $text-shadow-color != false
+		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
+
+
+/* =====================
+ * Import CSS partials
+ * ====================*/
+@import "typography"
+@import "editor"
+// @import "elements"
+// @import "classes"
+

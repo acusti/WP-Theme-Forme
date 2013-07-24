@@ -4,12 +4,13 @@
  * =========================*/
 
 /**
- * Register and set up basic theme functionality
+ * Register theme and set up basic theme functionality
  */
 function forme_setup() {
 	load_theme_textdomain( 'forme', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_editor_style();
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 977;
 
@@ -126,6 +127,37 @@ $preset_widgets = array (
 /* ==========================
  * Template tags
  * =========================*/
+
+/**
+ * Prints (or returns) a link to the post with its title as the default link text (overwritable)
+ *
+ * @param int $post_id (optional) The post id (or post object) to check
+ * @param string $link_text (optional) The text to use for the link
+ * @param bool $echo (optional) Whether to echo or return the generated HTML
+ * @return void
+ * @since Forme 0.57
+ */
+function forme_the_post_link( $post_id = false, $link_text = '', $echo = true ) {
+	if ( is_object( $post_id ) && is_int( $post_id->ID ) )
+		$post_id = $post_id->ID;
+	elseif ( ! $post_id )
+		$post_id = get_the_ID();
+	
+	if ( is_null( $post_id ) )
+		return false;
+	
+	$the_title = get_the_title( $post_id );
+	$the_title_attribute = esc_attr( strip_tags( $the_title ) );
+	if ( ! $link_text )
+		$link_text = $the_title;
+	
+	$link_element = '<a href="' . get_permalink( $post_id ) . '" title="' . sprintf( __( 'Read %s', 'forme' ), $the_title_attribute ) . '" rel="bookmark">' . $link_text . '</a>';
+
+	if ( ! $echo )
+		return $link_element;
+
+	echo $link_element;
+}
 
 function forme_get_page_number() {
 	if ( get_query_var( 'paged' ) ) {
