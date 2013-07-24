@@ -9,9 +9,9 @@
  * License URI: https://www.gnu.org/licenses/gpl.html
  */
 
-/* =====================
- * Variables
- * ====================*/
+// ======================
+// Variables
+// ======================
 
 // = Defaults
 // Vertical rhythm
@@ -59,9 +59,9 @@ $medium-width: 800px
 $narrow-width: 525px
 
 
-/* =====================
- * Functions
- * ====================*/
+// ======================
+// Functions
+// ======================
 
 // Strip the unit (px, em, etc) from a value
 @function strip-units($number)
@@ -80,9 +80,9 @@ $narrow-width: 525px
 	@return $base-font-size * $number
 
 
-/* =====================
- * Mixins
- * ====================*/
+// ======================
+// Mixins
+// ======================
 
 @mixin image-replacement($height, $image: false, $x: "auto", $y: "auto")
 	height: 0
@@ -159,9 +159,9 @@ $narrow-width: 525px
 		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
 
 
-/* =====================
- * Import CSS partials
- * ====================*/
+// ======================
+// Import CSS partials
+// ======================
 @import "typography"
 @import "structure"
 @import "navigation"
