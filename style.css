@@ -203,66 +203,36 @@ code,
 pre {
   font-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace; }
 
-/* line 96, sass/_typography.sass */
-.entry-content ol,
-.comment-content ol,
-.text-widget ol,
-.textwidget ol {
+/* line 93, sass/_typography.sass */
+.entry-content ol, .comment-content ol, .text-widget ol, .textwidget ol {
   list-style: decimal; }
-  /* line 99, sass/_typography.sass */
-  .entry-content ol ol,
-  .comment-content ol ol,
-  .text-widget ol ol,
-  .textwidget ol ol {
+  /* line 96, sass/_typography.sass */
+  .entry-content ol ol, .comment-content ol ol, .text-widget ol ol, .textwidget ol ol {
     list-style: lower-alpha; }
-/* line 159, sass/style.sass */
-.entry-content ul li,
-.comment-content ul li,
-.text-widget ul li,
-.textwidget ul li {
+/* line 165, sass/style.sass */
+.entry-content ul li, .comment-content ul li, .text-widget ul li, .textwidget ul li {
   padding-left: 24px;
   background: url('img/list-bullet.png?1365197358') no-repeat 9.5px 6.5px;
   list-style-type: none; }
-/* line 105, sass/_typography.sass */
+/* line 102, sass/_typography.sass */
 .entry-content ol,
-.entry-content dd,
-.comment-content ol,
-.comment-content dd,
-.text-widget ol,
-.text-widget dd,
-.textwidget ol,
+.entry-content dd, .comment-content ol,
+.comment-content dd, .text-widget ol,
+.text-widget dd, .textwidget ol,
 .textwidget dd {
   padding-left: 2em; }
-/* line 109, sass/_typography.sass */
-.entry-content ol ol, .entry-content ol dd, .entry-content dd ol, .entry-content dd dd,
-.comment-content ol ol,
-.comment-content ol dd,
-.comment-content dd ol,
-.comment-content dd dd,
-.text-widget ol ol,
-.text-widget ol dd,
-.text-widget dd ol,
-.text-widget dd dd,
-.textwidget ol ol,
-.textwidget ol dd,
-.textwidget dd ol,
-.textwidget dd dd {
+/* line 106, sass/_typography.sass */
+.entry-content ol ol, .entry-content ol dd, .entry-content dd ol, .entry-content dd dd, .comment-content ol ol, .comment-content ol dd, .comment-content dd ol, .comment-content dd dd, .text-widget ol ol, .text-widget ol dd, .text-widget dd ol, .text-widget dd dd, .textwidget ol ol, .textwidget ol dd, .textwidget dd ol, .textwidget dd dd {
   padding-left: 1.5em; }
-/* line 112, sass/_typography.sass */
-.entry-content li,
-.comment-content li,
-.text-widget li,
-.textwidget li {
+/* line 109, sass/_typography.sass */
+.entry-content li, .comment-content li, .text-widget li, .textwidget li {
   line-height: 1.35em;
   margin-top: 0.825em;
   padding-top: 0em;
   padding-bottom: 0em;
   margin-bottom: 0.825em; }
-/* line 116, sass/_typography.sass */
-.entry-content blockquote,
-.comment-content blockquote,
-.text-widget blockquote,
-.textwidget blockquote {
+/* line 113, sass/_typography.sass */
+.entry-content blockquote, .comment-content blockquote, .text-widget blockquote, .textwidget blockquote {
   margin-top: 1.5em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -270,40 +240,37 @@ pre {
   padding-left: 2em;
   padding-right: 2em;
   background-color: #f2f2f2; }
-  /* line 122, sass/_typography.sass */
-  .entry-content blockquote > :last-child,
-  .comment-content blockquote > :last-child,
-  .text-widget blockquote > :last-child,
-  .textwidget blockquote > :last-child {
+  /* line 119, sass/_typography.sass */
+  .entry-content blockquote > :last-child, .comment-content blockquote > :last-child, .text-widget blockquote > :last-child, .textwidget blockquote > :last-child {
     margin-bottom: 0; }
 
-/* line 125, sass/_typography.sass */
+/* line 122, sass/_typography.sass */
 dt,
 strong {
   font-weight: bold; }
 
-/* line 129, sass/_typography.sass */
+/* line 126, sass/_typography.sass */
 em {
   font-style: italic; }
 
-/* line 132, sass/_typography.sass */
+/* line 129, sass/_typography.sass */
 a,
 a:link {
   color: #ec2c2e;
   text-decoration: none; }
 
-/* line 137, sass/_typography.sass */
+/* line 134, sass/_typography.sass */
 a:hover {
   text-decoration: underline; }
 
-/* line 140, sass/_typography.sass */
+/* line 137, sass/_typography.sass */
 sup,
 sub {
   position: relative;
   bottom: 0.55em;
   font-size: 0.75em; }
 
-/* line 146, sass/_typography.sass */
+/* line 143, sass/_typography.sass */
 sub {
   bottom: auto;
   top: 0.25em; }
@@ -446,7 +413,7 @@ ul.menu {
     /* line 53, sass/_navigation.sass */
     ul.menu .social.facebook a {
       font-family: FontAwesome; }
-      /* line 139, sass/style.sass */
+      /* line 145, sass/style.sass */
       ul.menu .social.facebook a:before {
         text-decoration: inherit;
         content: "\f02a";
@@ -454,7 +421,7 @@ ul.menu {
     /* line 56, sass/_navigation.sass */
     ul.menu .social.twitter a {
       font-family: FontAwesome; }
-      /* line 139, sass/style.sass */
+      /* line 145, sass/style.sass */
       ul.menu .social.twitter a:before {
         text-decoration: inherit;
         content: "\f029";
@@ -462,7 +429,7 @@ ul.menu {
     /* line 59, sass/_navigation.sass */
     ul.menu .social.linkedin a {
       font-family: FontAwesome; }
-      /* line 139, sass/style.sass */
+      /* line 145, sass/style.sass */
       ul.menu .social.linkedin a:before {
         text-decoration: inherit;
         content: "\f033";
@@ -477,7 +444,7 @@ ul.menu {
   color: #ec2c2e;
   cursor: pointer;
   font-family: FontAwesome; }
-  /* line 139, sass/style.sass */
+  /* line 145, sass/style.sass */
   .menu-toggle:before {
     text-decoration: inherit;
     content: "\f02d";

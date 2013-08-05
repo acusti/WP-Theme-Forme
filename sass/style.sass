@@ -50,10 +50,14 @@
 
 // Convert a list to a string with items separated by $glue
 @function unite($list, $glue: ", ")
+	@if length($list) == 1
+		@return $list
+
 	$string: ""
 	@each $item in $list
 		@if $string != ""
 			$string: $string + $glue
+			
 		$string: $string + $item
 	@return $string
 
@@ -74,7 +78,7 @@ $default-text-shadow-h-offset: 0px
 $default-text-shadow-v-offset: 1px
 $inline-block-alignment: top
 $legacy-support-for-ie7: true
-// Susy variables
+// Grid variables
 $total-width: 1000px
 $total-columns: 6
 $column-width-abs: 150px
@@ -89,6 +93,8 @@ $bckg-color: rgb(229, 229, 229)
 $grey: rgb(179, 179, 179)
 $text-color: rgb(51, 51, 51)
 $header-height: 84px
+// Regular content selectors
+$content-selectors: ".entry-content", ".comment-content", ".text-widget", ".textwidget"
 // Breakpoints
 $max-width: $total-width
 $medium-width: 800px
