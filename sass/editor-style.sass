@@ -1,29 +1,7 @@
-/* =====================
- * Variables
- * ====================*/
+// ======================
+// Compass/plugin imports
+// ======================
 
-// = Defaults
-// Vertical rhythm
-$base-font-size: 12px
-$base-line-height: 18px
-// At the cost of causing some disruptions to vertical rhythm, make sure line-heights do not vary too wildly
-$round-to-nearest-half-line: true
-// General defaults
-$default-text-shadow-color: black
-$default-text-shadow-h-offset: 0px
-$default-text-shadow-v-offset: 1px
-$inline-block-alignment: top
-$legacy-support-for-ie7: true
-// Susy variables
-$total-width: 1000px
-$total-columns: 6
-$column-width-abs: 150px
-$column-width: $column-width-abs / $total-width * 100%
-$gutter-width-abs: 20px
-$gutter-width: $gutter-width-abs / $total-width * 100%
-$grid-padding: 0
-
-// = Imports
 // Import core compass framework http://compass-style.org/reference/compass/
 @import "compass"
 // Import and apply global reset
@@ -31,17 +9,12 @@ $grid-padding: 0
 // Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
 @import "compass/typography/vertical_rhythm"
 
-// = Custom variables (imports are first so custom variables can use them)
-$accent-color: rgb(236, 44, 46)
-$bckg-color: rgb(229, 229, 229)
-$grey: rgb(179, 179, 179)
-$text-color: rgb(51, 51, 51)
-$header-height: 84px
 
+// ======================
+// Functions
+// ======================
 
-/* =====================
- * Functions
- * ====================*/
+// Note: functions come before variables so they can be used anywhere
 
 // Strip the unit (px, em, etc) from a value
 @function strip-units($number)
@@ -59,10 +32,55 @@ $header-height: 84px
 	
 	@return $base-font-size * $number
 
+// Convert a list to a string with items separated by $glue
+@function unite($list, $glue: ", ")
+	$string: ""
+	@each $item in $list
+		@if $string != ""
+			$string: $string + $glue
+		
+		$string: $string + $item
+	@return $string
 
-/* =====================
- * Mixins
- * ====================*/
+
+// ======================
+// Variables
+// ======================
+
+// = Defaults
+// Vertical rhythm
+$base-font-size: 12px
+$base-line-height: 18px
+// At the cost of causing some disruptions to vertical rhythm, make sure line-heights do not vary too wildly
+$round-to-nearest-half-line: true
+// General defaults
+$default-text-shadow-color: black
+$default-text-shadow-h-offset: 0px
+$default-text-shadow-v-offset: 1px
+$inline-block-alignment: top
+$legacy-support-for-ie7: true
+// Grid variables
+$total-width: 1000px
+$total-columns: 6
+$column-width-abs: 150px
+$column-width: $column-width-abs / $total-width * 100%
+$gutter-width-abs: 20px
+$gutter-width: $gutter-width-abs / $total-width * 100%
+$grid-padding: 0
+
+// = Custom variables
+$accent-color: rgb(236, 44, 46)
+$bckg-color: rgb(229, 229, 229)
+$grey: rgb(179, 179, 179)
+$text-color: rgb(51, 51, 51)
+$header-height: 84px
+// Regular content selectors
+$content-selectors: ".mceContentBody"
+
+
+// ======================
+// Mixins
+// ======================
 
 // Based on the compass/typography/lists/bullets pretty-bullets mixin
 // Modified to accept padding as 2nd argument in em, %, or px, and to assume other values based on $base-font-size and $base-line-height
@@ -90,9 +108,9 @@ $header-height: 84px
 		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
 
 
-/* =====================
- * Import CSS partials
- * ====================*/
+// ======================
+// Import CSS partials
+// ======================
 @import "typography"
 @import "editor"
 // @import "elements"
