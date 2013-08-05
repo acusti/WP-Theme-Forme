@@ -209,7 +209,7 @@ pre {
   /* line 96, sass/_typography.sass */
   .entry-content ol ol, .comment-content ol ol, .text-widget ol ol, .textwidget ol ol {
     list-style: lower-alpha; }
-/* line 165, sass/style.sass */
+/* line 96, sass/_helpers.sass */
 .entry-content ul li, .comment-content ul li, .text-widget ul li, .textwidget ul li {
   padding-left: 24px;
   background: url('img/list-bullet.png?1365197358') no-repeat 9.5px 6.5px;
@@ -413,7 +413,7 @@ ul.menu {
     /* line 53, sass/_navigation.sass */
     ul.menu .social.facebook a {
       font-family: FontAwesome; }
-      /* line 145, sass/style.sass */
+      /* line 76, sass/_helpers.sass */
       ul.menu .social.facebook a:before {
         text-decoration: inherit;
         content: "\f02a";
@@ -421,7 +421,7 @@ ul.menu {
     /* line 56, sass/_navigation.sass */
     ul.menu .social.twitter a {
       font-family: FontAwesome; }
-      /* line 145, sass/style.sass */
+      /* line 76, sass/_helpers.sass */
       ul.menu .social.twitter a:before {
         text-decoration: inherit;
         content: "\f029";
@@ -429,7 +429,7 @@ ul.menu {
     /* line 59, sass/_navigation.sass */
     ul.menu .social.linkedin a {
       font-family: FontAwesome; }
-      /* line 145, sass/style.sass */
+      /* line 76, sass/_helpers.sass */
       ul.menu .social.linkedin a:before {
         text-decoration: inherit;
         content: "\f033";
@@ -444,7 +444,7 @@ ul.menu {
   color: #ec2c2e;
   cursor: pointer;
   font-family: FontAwesome; }
-  /* line 145, sass/style.sass */
+  /* line 76, sass/_helpers.sass */
   .menu-toggle:before {
     text-decoration: inherit;
     content: "\f02d";
