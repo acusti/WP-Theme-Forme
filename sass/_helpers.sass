@@ -46,13 +46,11 @@
 		+background-image-retina($image)
 
 // If you want the alternate "sign" (i.e. button / badge) version of the icon, specify true as 2nd parameter
-@mixin icon($icon-name, $alternate: false)
-	$icon-classes:	"facebook"	"twitter"	"linkedin"	"rss"		"google-plus"	"pinterest"	"comment"	"comments"	"phone"		"envelope"	"credit-card"	"menu"
-	$icon-codes-1:	"\f02a"		"\f029"		"\f033"		"\f02c"	"\f031"			"\f02e"		"\f022"		"\f025"		"\f027"		"\f021"	 	"\f02b"			"\f02d"
-	$icon-codes-2:	"\f024"		"\f023"		"\f026"		"\f02c"	"\f030"			"\f02f"		"\f034"		"\f035"		"\f028"		"\f032"	 	"\f02b"			"\f02d"
+@mixin icon($icon-name, $alternate: false, $replace: false)
+	$icon-classes:	"facebook"	"twitter"	"linkedin"	"rss"	"google-plus"	"pinterest"	"comment"	"comments"	"phone"		"envelope"	"credit-card"	"menu"	"search"	"cart"	"star"	"star-empty"
 	// Icon code maps for full version of FontAwesome:
-	//$icon-codes-1:	"\f09a"		"\f099"		"\f0e1"		"\f09e"	"\f0d5"			"\f0d2"		"\f075"		"\f086"		"\f095"		"\f003"	 	"\f09d"			"\f0c9"
-	//$icon-codes-2:	"\f082"		"\f081"		"\f08c"		"\f09e"	"\f0d4"			"\f0d3"		"\f0e5"		"\f0e6"		"\f098"		"\f0e0"	 	"\f09d"			"\f0c9"
+	$icon-codes-1:	"\f09a"		"\f099"		"\f0e1"		"\f09e"	"\f0d5"			"\f0d2"		"\f075"		"\f086"		"\f095"		"\f003" 	"\f09d" 		"\f0c9"	"\f002"		"\f07a"	"\f005"	"\f006"
+	$icon-codes-2:	"\f082"		"\f081"		"\f08c"		"\f09e"	"\f0d4"			"\f0d3"		"\f0e5"		"\f0e6"		"\f098"		"\f0e0"		"\f09d" 		"\f0c9"	"\f002"		"\f07a"	"\f005"	"\f006"
 	// Initialize the compiled icon-codes variable as an empty list
 	$icon-codes: zip($icon-codes-1, $icon-codes-2)
 	$version: 1
@@ -70,13 +68,18 @@
 			$icon-code: nth(nth($icon-codes, $i), $version)
 		
 		$i: $i + 1
-		
-	font-family: FontAwesome
 	
-	&:before
+	@if $replace
+		font-family: FontAwesome
 		text-decoration: inherit
 		content: $icon-code
-		speak: none
+		speak: none	
+	@else
+		&:before
+			font-family: FontAwesome
+			text-decoration: inherit
+			content: $icon-code
+			speak: none
 
 @mixin full-width
 	max-width: 100%
@@ -109,3 +112,18 @@
 	-webkit-font-smoothing: antialiased
 	@if $text-shadow-color != false
 		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
+
+// Use to generate input placeholder selectors for different browsers
+// From https://github.com/michaelsacca/Compass-Placeholder-Text-Mixin
+@mixin input-placeholder
+	input
+		&.placeholder
+			@content
+		&:-moz-placeholder
+			@content
+		&::-moz-placeholder
+			@content
+		&:-ms-input-placeholder
+			@content
+		&::-webkit-input-placeholder
+			@content 

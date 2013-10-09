@@ -1,4 +1,5 @@
-/* Theme Name: Forme
+/*!
+ * Theme Name: Forme
  * Description: Starter theme for WordPress custom theme development based on TidyThemes' BlankSlate starter theme.
  * Author: Pure Cobalt
  * Author URI: http://www.purecobalt.com/
@@ -209,7 +210,7 @@ pre {
   /* line 96, sass/_typography.sass */
   .entry-content ol ol, .comment-content ol ol, .text-widget ol ol, .textwidget ol ol {
     list-style: lower-alpha; }
-/* line 96, sass/_helpers.sass */
+/* line 99, sass/_helpers.sass */
 .entry-content ul li, .comment-content ul li, .text-widget ul li, .textwidget ul li {
   padding-left: 24px;
   background: url('img/list-bullet.png?1365197358') no-repeat 9.5px 6.5px;
@@ -410,30 +411,24 @@ ul.menu {
       /* line 50, sass/_navigation.sass */
       ul.menu .social a:before {
         padding-right: 1.5em; }
-    /* line 53, sass/_navigation.sass */
-    ul.menu .social.facebook a {
-      font-family: FontAwesome; }
-      /* line 76, sass/_helpers.sass */
-      ul.menu .social.facebook a:before {
-        text-decoration: inherit;
-        content: "\f02a";
-        speak: none; }
-    /* line 56, sass/_navigation.sass */
-    ul.menu .social.twitter a {
-      font-family: FontAwesome; }
-      /* line 76, sass/_helpers.sass */
-      ul.menu .social.twitter a:before {
-        text-decoration: inherit;
-        content: "\f029";
-        speak: none; }
-    /* line 59, sass/_navigation.sass */
-    ul.menu .social.linkedin a {
-      font-family: FontAwesome; }
-      /* line 76, sass/_helpers.sass */
-      ul.menu .social.linkedin a:before {
-        text-decoration: inherit;
-        content: "\f033";
-        speak: none; }
+    /* line 78, sass/_helpers.sass */
+    ul.menu .social.facebook a:before {
+      font-family: FontAwesome;
+      text-decoration: inherit;
+      content: "\f09a";
+      speak: none; }
+    /* line 78, sass/_helpers.sass */
+    ul.menu .social.twitter a:before {
+      font-family: FontAwesome;
+      text-decoration: inherit;
+      content: "\f099";
+      speak: none; }
+    /* line 78, sass/_helpers.sass */
+    ul.menu .social.linkedin a:before {
+      font-family: FontAwesome;
+      text-decoration: inherit;
+      content: "\f0e1";
+      speak: none; }
 
 /* line 62, sass/_navigation.sass */
 .menu-toggle {
@@ -442,12 +437,12 @@ ul.menu {
   line-height: 1.5em;
   padding: 4px;
   color: #ec2c2e;
-  cursor: pointer;
-  font-family: FontAwesome; }
-  /* line 76, sass/_helpers.sass */
+  cursor: pointer; }
+  /* line 78, sass/_helpers.sass */
   .menu-toggle:before {
+    font-family: FontAwesome;
     text-decoration: inherit;
-    content: "\f02d";
+    content: "\f0c9";
     speak: none; }
   /* line 70, sass/_navigation.sass */
   .menu-toggle:hover {
