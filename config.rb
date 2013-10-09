@@ -1,5 +1,13 @@
 # Require any additional compass plugins here.
 
+## Retina compass helpers https://github.com/joelambert/Retina-Compass-Helpers
+retina_ext = File.join(File.dirname(__FILE__), "retina")
+require File.join(retina_ext, "lib", "sass_extensions.rb")
+add_import_path File.join(retina_ext, "stylesheets")
+
+## Susy http://susy.oddbird.net/guides/getting-started/
+require "susy"
+
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = ""
@@ -21,8 +29,3 @@ relative_assets = true
 
 preferred_syntax = :sass
 
-# Add retina compass helpers https://github.com/joelambert/Retina-Compass-Helpers
-
-retina_ext = File.join(File.dirname(__FILE__), "retina")
-require File.join(retina_ext, "lib", "sass_extensions.rb")
-add_import_path File.join(retina_ext, "stylesheets")
