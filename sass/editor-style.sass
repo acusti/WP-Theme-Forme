@@ -11,36 +11,12 @@
 
 
 // ======================
-// Functions
+// Functions and mixins
 // ======================
 
+// Import custom functions and mixins
 // Note: functions come before variables so they can be used anywhere
-
-// Strip the unit (px, em, etc) from a value
-@function strip-units($number)
-	@return $number / ($number * 0 + 1)
-
-// Convert a value (em, rem, %, px) to pixels based on $base-font-size
-@function to-pixels($number)
-	$unit: unit($number)
-	@if $unit == "px"
-		@return $number
-
-	$number: strip-units($number)
-	@if $unit == "%"
-		$number: ($number / 100)
-	
-	@return $base-font-size * $number
-
-// Convert a list to a string with items separated by $glue
-@function unite($list, $glue: ", ")
-	$string: ""
-	@each $item in $list
-		@if $string != ""
-			$string: $string + $glue
-		
-		$string: $string + $item
-	@return $string
+@import "helpers"
 
 
 // ======================
@@ -77,36 +53,6 @@ $text-color: rgb(51, 51, 51)
 $header-height: 84px
 // Regular content selectors
 $content-selectors: ".mceContentBody"
-
-
-// ======================
-// Mixins
-// ======================
-
-// Based on the compass/typography/lists/bullets pretty-bullets mixin
-// Modified to accept padding as 2nd argument in em, %, or px, and to assume other values based on $base-font-size and $base-line-height
-@mixin list-bullets($bullet-icon, $padding: 1em, $line-height: $base-line-height)
-	$width: image-width($bullet-icon)
-	$height: image-height($bullet-icon)
-	// We need $padding in pixels (if it is already in pixels, to-pixels will return it)
-	$padding: to-pixels($padding) 
-
-	li
-		padding-left: $padding
-		background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2
-		list-style-type: none
-
-@mixin dark-text($text-color: black, $text-shadow-color: transparent)
-	color: $text-color
-	-webkit-font-smoothing: subpixel-antialiased
-	@if $text-shadow-color != false
-		+text-shadow($default-text-shadow-h-offset $default-text-shadow-v-offset $default-text-shadow-blur $text-shadow-color)
-
-@mixin light-text($text-color: white, $text-shadow-color: $default-text-shadow-color, $text-shadow-h-offset: $default-text-shadow-h-offset, $text-shadow-v-offset: $default-text-shadow-v-offset, $text-shadow-blur: $default-text-shadow-blur)
-	color: $text-color
-	-webkit-font-smoothing: antialiased
-	@if $text-shadow-color != false
-		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
 
 
 // ======================
