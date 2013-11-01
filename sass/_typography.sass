@@ -5,8 +5,6 @@
 // = Variables
 $body-text-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
 $header-text-family: Georgia, serif
-// Sub headings use the Tradegothic webfont with body text fallback
-$sub-header-text-family: join("Tradegothic-BC", $body-text-family, comma)
 $mono-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace
 $base-block-elements: "h5, p, ul, ol, dl"
 
@@ -31,19 +29,13 @@ h2,
 h3,
 h4,
 h5
+	font-family: $header-text-family
 	font-weight: bold
 
 h1
-	font-family: $header-text-family
 	+adjust-font-size-to(32px)
 	+rhythm(0, 0, 0, 1, 32px)
 	text-transform: uppercase
-
-h2,
-h3,
-h4,
-h5
-	font-family: $sub-header-text-family
 
 h2
 	+adjust-font-size-to(24px)
