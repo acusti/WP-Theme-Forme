@@ -3,7 +3,7 @@
  * Description: Starter theme for WordPress custom theme development based on TidyThemes' BlankSlate starter theme.
  * Author: Pure Cobalt
  * Author URI: http://www.purecobalt.com/
- * Version: 0.55
+ * Version: 0.6.0
  * Tags: custom-menu, light, responsive, featured-images, microformats, sticky-post, threaded-comments, translation-ready, SASS, retina, vertical-rhythm, pagination, WP-PageNavi
  * License: GNU General Public License
  * License URI: https://www.gnu.org/licenses/gpl.html
@@ -50,6 +50,12 @@ $default-text-shadow-color: black
 $default-text-shadow-h-offset: 0px
 $default-text-shadow-v-offset: 1px
 $inline-block-alignment: top
+// Browser support
+// Browser usage threshold for features that gracefully degrade (1 in 100)
+$graceful-usage-threshold: 1
+// Browser usage threshold for features that cannot degrade gracefully (1 in 500)
+$critical-usage-threshold: 0.2
+// Deprecated browser support flags (Compass v0.12.*)
 $legacy-support-for-ie: false
 $legacy-support-for-mozilla: false
 // Grid variables
