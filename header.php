@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ) ?>; charset=<?php bloginfo( 'charset' ) ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="initial-scale=1.0">
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js');})(document.documentElement);/*.no-js -> .js*/</script>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/favicon.ico" type="image/x-icon">
 	<title><?php wp_title(' | ', true, 'right'); ?></title>
