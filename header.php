@@ -12,16 +12,17 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header>
-		<hgroup id="branding">
-			<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ) ?></h2>
-		</hgroup>
-		<nav id="meta-nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ) ?>
-		</nav>
-		<nav id="main-nav">
-			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ) ?>
-		</nav>
-	</header>
-	<div id="container" class="hfeed">
+	<div class="column-wrap">
+		<header>
+			<hgroup id="branding">
+				<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a></h1>
+				<h2 id="site-description"><?php bloginfo( 'description' ) ?></h2>
+			</hgroup>
+			<nav id="meta-nav">
+				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ) ?>
+			</nav>
+			<nav id="main-nav">
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ) ?>
+			</nav>
+		</header>
+		<div class="page-body hfeed">

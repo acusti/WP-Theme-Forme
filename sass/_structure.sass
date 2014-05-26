@@ -9,29 +9,30 @@ html
 body
 	background-color: white
 
+// Full width element placeholder
+%full-width
+	max-width: 100%
+	width: 100%
+
 .grid
 	+susy-grid-background
 
-/* Set up basic responsive main content column with overrideable max-width */
-body > *,
-body > footer > div
+// Set up basic responsive main content column with overrideable max-width
+.column-wrap
 	+container
 	max-width: $max-width
 	padding-left: $base-font-size
 	padding-right: $base-font-size
 
-/* Full width elements */
-body > footer,
-#wpadminbar
-	+full-width
+body
+	> header
+		position: relative
 
-body > header
-	position: relative
+	> footer
+		padding: 1.5em 0
+		background-color: $bckg-color
+		border-top: 1px solid darken($bckg-color, 33%)
 
-body > footer
-	padding: 1.5em 0
-	background-color: $bckg-color
-	border-top: 1px solid darken($bckg-color, 33%)
 
 /* == Page elements == */
 .entry-content
