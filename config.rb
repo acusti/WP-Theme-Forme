@@ -1,4 +1,4 @@
-# Require any additional compass plugins here.
+# Plugins
 
 ## Retina compass helpers https://github.com/joelambert/Retina-Compass-Helpers
 retina_ext = File.join(File.expand_path(File.dirname(__FILE__)), "sass", "plugins", "retina")
@@ -8,10 +8,10 @@ add_import_path File.join(retina_ext, "stylesheets")
 ## Base64 encode sass plugin http://stackoverflow.com/a/15455580/333625
 require File.join(File.expand_path(File.dirname(__FILE__)), "sass", "plugins", "base64encode.rb")
 
-## Susy http://susy.oddbird.net/guides/getting-started/
-require "susy"
+## Sass globbing https://github.com/chriseppstein/sass-globbing
+require "sass-globbing"
 
-# Set this to the root of your project when deployed:
+# Paths
 http_path = "/"
 css_dir = ""
 sass_dir = "sass"

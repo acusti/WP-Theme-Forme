@@ -1,0 +1,10 @@
+{
+  "name": "wp-theme-forme",
+  "version": "0.7.0",
+  "dependencies": {
+    "modernizr": "^2.7.1",
+    "jquery-requestAnimationFrame": "^0.1.2",
+    "susy": "~2.1.2"
+  },
+  "devDependencies": {}
+}
