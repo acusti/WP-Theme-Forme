@@ -22,14 +22,14 @@ function forme_setup() {
 	
 	if ( ! is_admin() ) {
 		// Get theme for access to theme version number
-		$theme = get_theme( get_current_theme() );
+		$theme = wp_get_theme( get_stylesheet() );
 		
 		// Theme CSS
 		wp_enqueue_style(
 			'forme',
 			get_stylesheet_uri(),
 			false,
-			$theme['Version']
+			$theme->get( 'Version' )
 		);
 		
 		// Theme JS (final 'true' parameter makes it be loaded in the footer)
@@ -37,7 +37,7 @@ function forme_setup() {
 			'global',
 			get_template_directory_uri() . '/js/global.js',
 			array( 'jquery' ),
-			$theme['Version'],
+			$theme->get( 'Version' ),
 			true
 		);
 	
