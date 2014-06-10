@@ -8,7 +8,7 @@ __Requirements__:
 - Node.js and npm
 - Ruby
 - Bower `npm install -g bower`
-- The Compass ruby gem ([version 1.x][cver]) `gem install compass --pre`
+- The Compass ruby gem ([version 1.x][compass-ver]) `gem install compass --pre`
 - The [SASS globbing][glob] ruby gem `gem install sass-globbing`
 
 ## First time use
@@ -27,9 +27,9 @@ Organization of styles and syntax of class names is based on a marriage of conve
 
 [tidy]: http://tidythemes.com/
 [blank]: http://wordpress.org/themes/blankslate
-[cver]: http://beta.compass-style.org/ "Currently still considered a pre-release, hence the --pre flag"
+[compass-ver]: http://beta.compass-style.org/ "Currently still considered a pre-release, hence the --pre flag"
 [glob]: https://github.com/chriseppstein/sass-globbing
 [SMACSS]: http://smacss.com/book/
-[BEM]: http://bem.info/articles/start-with-project-stub/ "Based on the idea of Block-Element-Modifier"
+[BEM]: http://bem.info/articles/start-with-project-stub/ "Stands for Block-Element-Modifier"
 [OOCSS]: https://github.com/stubbornella/oocss/wiki "Object Oriented CSS"
 [objects-in-space]: https://medium.com/objects-in-space/f6f404727
